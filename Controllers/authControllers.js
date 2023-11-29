@@ -7,13 +7,12 @@ const OtpModel = require("../model/optSchema");
 const emailTemplate = require("../Template/emailTemplate");
 
 const SignupController = async (req, res) => {
-//   const image = req.files[0].path;
-//   console.log(image);
+  const image = req.files[0].path;
+  console.log(image);
 
   try {
     const body = req.body;
     console.log(body);
-    return
     const { FullName, Email, Password, PhoneNo, userType } = body;
     if (!FullName || !Email || !Password || !PhoneNo || !userType) {
       res.json({
